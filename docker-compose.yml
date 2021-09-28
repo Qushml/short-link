@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: "supersecret"
+      MYSQL_DATABASE: "short-link"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "secret"
+
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: _docker
+      dockerfile: development/php/Dockerfile
+    volumes:
+      - ./:/app
+    environment:
+      TZ: "Europe/Moscow"
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: nginx
+    build:
+      context: _docker
+      dockerfile: development/nginx/Dockerfile
+    volumes:
+      - ./:/app
+    ports:
+      - "80:80"
+    depends_on:
+      - php-fpm
+
+volumes:
+  mysql-data:
