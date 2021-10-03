@@ -43,14 +43,7 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+        'urlManager' => require dirname(__DIR__) . '/urlManager.php',
     ],
     'params' => $params,
 ];
