@@ -1,3 +1,5 @@
 vendor
 runtime
 !runtime/.gitignore
+
+.env

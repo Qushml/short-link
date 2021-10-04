@@ -18,7 +18,7 @@ class LinkController extends \yii\web\Controller
     public function actionView(string $hash)
     {
         if (!$model = $this->repository->get($hash)) {
-            throw new NotFoundHttpException();
+            throw new NotFoundHttpException('Hash not found');
         }
 
         $model->incrementClickCount();

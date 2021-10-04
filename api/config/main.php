@@ -21,10 +21,10 @@ return [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-        'frontendUrlManager' => static function () use ($params) {
+        'frontendUrlManager' => function () use ($params) {
             $component = require dirname(__DIR__,2) . '/config/urlManager.php';
             $component['baseUrl'] = $params['hostInfo'];
-            return $component;
+            return Yii::createObject($component);
         },
         'urlManager' => [
             'enablePrettyUrl' => true,

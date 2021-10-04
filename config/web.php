@@ -17,7 +17,7 @@ $config = [
             'cookieValidationKey' => '1gWE7MdqBaDm5twAsqLVRCPcoJMe0BJM',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\caching\DummyCache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -43,7 +43,10 @@ $config = [
             ],
         ],
         'db' => $db,
-        'urlManager' => require dirname(__DIR__) . '/urlManager.php',
+        'frontendUrlManager' => require __DIR__ . '/urlManager.php',
+        'urlManager' => function () {
+            return Yii::$app->get('frontendUrlManager');
+        },
     ],
     'params' => $params,
 ];

@@ -63,7 +63,7 @@ class LinkController extends Controller
             ];
         }
 
-        return ['status' => 'success', 'hash' => $link->hash];
+        return ['status' => 'success', 'short_url' => \Yii::$app->frontendUrlManager->createAbsoluteUrl(['link/view', 'hash' => $link->hash])];
     }
 
     public function actionView(string $hash)
@@ -75,7 +75,8 @@ class LinkController extends Controller
                 return [
                     'status' => 'ok',
                     'url' => $linkModel->url,
-                    'click count' => $linkModel->click_count,
+                    'click_count' => $linkModel->click_count,
+                    'short_url' => \Yii::$app->frontendUrlManager->createAbsoluteUrl(['link/view', 'hash' => $linkModel->hash]),
                 ];
             }
 
