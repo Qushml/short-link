@@ -22,3 +22,28 @@ INSTALLATION
 ~~~
 $ make setup 
 ~~~
+
+BASIC USAGES
+------------
+### http://127.0.0.1/api/v1/link/create POST
+~~~
+Header
+"Content-Type": "application/x-www-form-urlencoded"
+
+Data
+url=http://github.com
+~~~
+### http://127.0.0.1/api/v1/{hash} GET
+~~~
+{
+    "status":"ok",
+    "url":"http://github.com",
+    "click_count":2,
+    "short_url":"http://127.0.0.1/751ba6d4"
+}
+~~~
+### http://127.0.0.1/{hash} GET
+~~~
+increment click count
+redirect to http://github.com
+~~~
