@@ -11,10 +11,10 @@ Short link service
 
 INSTALLATION
 ------------
-### Docker, git
+### Docker
 ~~~
 # apt-get update
-# apt install -y docker docker-compose git
+# apt install -y docker docker-compose
 ~~~
 
 ### Makefile
