@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Class m210928_203811_test
  */
-class m210928_203811_base_table extends Migration
+class m210931_203811_link_table extends Migration
 {
     protected string $tableName = '{{%link}}';
 
