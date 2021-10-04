@@ -20,9 +20,9 @@ INSTALLATION
 ### Makefile
 
 ~~~
-$ make setup [NGINX_HOST_PORT=80]
+$ make setup [NGINX_HOST_PORT=80] [MYSQL_HOST_PORT=3306]
 ~~~
-To run a multiple docker on host use custom port
+Use custom ports to run a multiple services on host 
 
 BASIC USAGES
 ------------
