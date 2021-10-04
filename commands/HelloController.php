@@ -27,14 +27,6 @@ class HelloController extends Controller
      */
     public function actionIndex($message = 'hello world')
     {
-        $text = 'http://google.com';
-
-        var_dump(substr(md5(uniqid(mt_rand(), true)),0,8));
-        var_dump(substr(md5(uniqid(mt_rand(), true)),0,8));
-        var_dump(substr(md5(uniqid(mt_rand(), true)),0,8));
-//        foreach (hash_algos() as $algo) {
-//            echo "$algo) ". hash($algo, $text) . PHP_EOL;
-//        }
-
+        $this->stdout($message);
     }
 }
