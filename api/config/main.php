@@ -23,7 +23,6 @@ return [
         ],
         'frontendUrlManager' => function () use ($params) {
             $component = require dirname(__DIR__,2) . '/config/urlManager.php';
-            $component['baseUrl'] = $params['hostInfo'];
             return Yii::createObject($component);
         },
         'urlManager' => [

@@ -20,8 +20,9 @@ INSTALLATION
 ### Makefile
 
 ~~~
-$ make setup 
+$ make setup [NGINX_HOST_PORT=80]
 ~~~
+To run a multiple docker on host use custom port
 
 BASIC USAGES
 ------------
