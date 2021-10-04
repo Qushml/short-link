@@ -22,12 +22,6 @@ class LinkService
         return $link;
     }
 
-    public function incClickCount(Link $link): void # todo: to other service
-    {
-        $link->incrementClickCount();
-        $this->repository->save($link);
-    }
-
     protected function generateUniqHash(): string
     {
         do {
