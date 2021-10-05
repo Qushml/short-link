@@ -34,7 +34,7 @@ Header
 Data
 url=http://github.com
 ~~~
-### http://127.0.0.1/api/v1/{hash} GET
+### http://127.0.0.1/api/v1/link/{hash} GET
 ~~~
 {
     "status":"ok",
